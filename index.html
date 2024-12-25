@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=task_alt" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<>
+    <nav class="fixed top-0 left-0 w-full flex items-center justify-between bg-white px-4 md:px-10 py-5 shadow-md z-50">
+        <p class="text-lg font-semibold">KeyCity</p>
+        
+        <!-- Mobile Menu Button -->
+        <button class="lg:hidden" onclick="toggleMenu()">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+        </button>
+    
+        <!-- Desktop Menu -->
+        <ul class="hidden lg:flex items-center gap-8">
+            <li class="cursor-pointer hover:text-blue-600 transition-colors">Rent</li>
+            <li class="cursor-pointer hover:text-blue-600 transition-colors">Buy</li>
+            <li class="cursor-pointer hover:text-blue-600 transition-colors">Sell</li>
+            <li class="group relative cursor-pointer">
+                <div class="flex items-center hover:text-blue-600 transition-colors">
+                    Manage Property
+                    <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </div>
+            </li>
+            <li class="group relative cursor-pointer">
+                <div class="flex items-center hover:text-blue-600 transition-colors">
+                    Resources
+                    <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </div>
+            </li>
+        </ul>
+        
+        <!-- Desktop Auth Buttons -->
+        <div class="hidden lg:flex gap-4">
+            <button class="px-4 py-2 hover:text-blue-600 transition-colors">Login</button>
+            <button class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">Sign Up</button>
+        </div>
+    
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="lg:hidden absolute top-full left-0 w-full bg-white shadow-md hidden transition-all duration-300">
+            <ul class="px-4 py-4 space-y-4">
+                <li class="hover:text-blue-600 transition-colors">Rent</li>
+                <li class="hover:text-blue-600 transition-colors">Buy</li>
+                <li class="hover:text-blue-600 transition-colors">Sell</li>
+                <li class="hover:text-blue-600 transition-colors">Manage Property</li>
+                <li class="hover:text-blue-600 transition-colors">Resources</li>
+            </ul>
+            <div class="p-4 space-y-2 border-t">
+                <button class="w-full py-2 hover:text-blue-600 transition-colors">Login</button>
+                <button class="w-full py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">Sign Up</button>
+            </div>
+        </div>
+    </nav>
+    
+
+    <div class="flex flex-col lg:flex-row items-center min-h-[75vh] relative px-4 lg:px-0">
+        <!-- Content Section -->
+        <div class="w-full lg:w-1/2 p-4 lg:p-12 space-y-6">
+            <h2 class="text-[#122832] text-4xl lg:text-5xl font-['Verdana'] leading-tight">
+                Buy, Sell, or Rent Your <br> Property with Ease
+            </h2>
+            
+            <p class="text-[#122832] text-lg lg:text-xl font-['Verdana'] leading-relaxed">
+                Discover a hassle-free way to buy, sell or rent amazing <br class="hidden lg:block"> properties - all without paying commission fee.
+            </p>
+    
+            <!-- Search Bar -->
+            <div class="flex items-center justify-between w-full lg:w-[500px] border-2 border-[#122832] rounded-full p-2 mt-20">
+                <p class="text-gray-500 text-lg ml-6">Search by Location</p>
+                <button class="bg-[#122832] text-white px-8 py-4 rounded-full text-lg hover:bg-[#1a3a4b] transition-colors">
+                    Search
+                </button>
+            </div>
+    
+            <!-- Extra Info Box -->
+            <div class="w-full lg:w-[85%] shadow-lg p-6 space-y-6">
+                <!-- Options -->
+                <ul class="flex gap-12 font-['Verdana']">
+                    <li class="text-[#122832] text-lg font-bold cursor-pointer hover:underline decoration-2">Rent</li>
+                    <li class="text-[#122832] text-lg font-bold cursor-pointer hover:underline decoration-2">Buy</li>
+                    <li class="text-[#122832] text-lg font-bold cursor-pointer hover:underline decoration-2">Sell</li>
+                </ul>
+    
+                <!-- Details -->
+                <div class="flex flex-col lg:flex-row items-center gap-6 lg:gap-0">
+                    <div class="lg:mx-8">
+                        <p class="text-gray-400 text-lg">Location</p>
+                        <h2 class="text-xl font-['Verdana']">Bangalore, India</h2>
+                    </div>
+                    
+                    <div class="lg:mx-8">
+                        <p class="text-gray-400 text-lg">When</p>
+                        <h2 class="text-xl font-['Verdana']">Select Move-in Date 📅</h2>
+                    </div>
+    
+                    <button class="w-full lg:w-[220px] bg-[#122832] text-white py-4 rounded text-lg hover:bg-[#238ab9] transition-colors">
+                        Browse Properties
+                    </button>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Image Section -->
+        <div class="w-full lg:w-1/2 p-4 lg:p-12 mt-8 lg:mt-0">
+            <img src="/images/freepik__upload__96960.jpeg" 
+                 alt="Property Image" 
+                 class="w-full max-w-[900px] h-auto lg:h-[600px] object-cover"
+            >
+        </div>
+    </div>
+    <div class="flex flex-col h-[35vh] items-center text-center font-['Verdana'] py-8 px-4 lg:px-16 relative">
+        <h2 class="text-2xl lg:text-5xl mb-8 lg:mb-20 text-[#122832]">Trusted by the world's best</h2>
+        
+        <!-- Marquee Section -->
+        <div class="w-full overflow-hidden">
+            <div class="animate-marquee inline-flex gap-16 lg:gap-[250px] justify-center items-center py-4">
+                <img src="images/astrazeneca_5968189-removebg-preview.png" alt="Astrazeneca" 
+                     class="w-16 h-16 lg:w-[100px] lg:h-[100px]">
+                <img src="images/egypt-pyramid_12194974-removebg-preview.png" alt="Egypt Pyramid"
+                     class="w-16 h-16 lg:w-[100px] lg:h-[100px]">
+                <img src="images/pfizer_5968302-removebg-preview.png" alt="Pfizer"
+                     class="w-16 h-16 lg:w-[100px] lg:h-[100px]">
+                <img src="images/usaa_5968340.png" alt="USAA"
+                     class="w-16 h-16 lg:w-[100px] lg:h-[100px]">
+                <img src="images/rb_93-removebg-preview.png" alt="RB"
+                     class="w-16 h-16 lg:w-[100px] lg:h-[100px]">
+                <img src="images/rb_717-removebg-preview.png" alt="RB"
+                     class="w-16 h-16 lg:w-[100px] lg:h-[100px]">
+            </div>
+        </div>
+    </div>
+
+    <div class="flex flex-col lg:flex-row items-center min-h-[65vh] p-4 lg:p-12 gap-2 lg:gap-7 font-['Verdana']">
+        <!-- Image Section -->
+        <div class="w-full lg:w-2/5 p-4 lg:p-12">
+            <img 
+                src="images/effective-business-team-using-gadgets (6).jpg" 
+                alt="Business Team" 
+                class="w-full max-w-[900px] h-auto object-cover"
+            >
+        </div>
+    
+        <!-- Content Section -->
+        <div class="w-full lg:w-1/2 p-4 lg:p-20 space-y-6">
+            <!-- Mission Title and Line -->
+            <div class="space-y-2">
+                <p class="text-lg lg:text-xl text-[#122832]">OUR MISSION</p>
+                <div class="w-[70px] h-[3px] bg-[#122832]"></div>
+            </div>
+    
+            <!-- Main Content -->
+            <h2 class="text-4xl lg:text-6xl text-[#122832] leading-tight">
+                Empowering Tomorrow's <br>
+                Communities
+            </h2>
+    
+            <p class="text-lg lg:text-2xl text-[#122832] leading-relaxed tracking-wide">
+                Join us in shaping a brighter tomorrow. At our core, we're dedicated to building 
+                <br class="hidden lg:block"> more than structures, we're crafting communities and fostering growth. 
+                <br class="hidden lg:block"> With each project we strive for excellence, sustainability, and innovation.
+            </p>
+    
+            <!-- Button -->
+            <button class="mt-6 w-full lg:w-[170px] h-16 lg:h-20 bg-[#122832] text-white rounded-full shadow-md hover:bg-[#1a3a4b] transition-colors text-xl lg:text-2xl font-['Verdana']">
+                Explore Now
+            </button>
+        </div>
+    </div>
+    
+
+       
+    <div class="flex flex-col lg:flex-row items-center min-h-[90vh] py-8">
+        <!-- Content Section -->
+        <div class="w-full lg:w-1/2 p-4 lg:p-20 space-y-8">
+            <h2 class="text-4xl lg:text-6xl text-[#122832] font-['Verdana'] leading-tight">
+                Elevate Your Living Space <br class="hidden lg:block"> with Expert Renovations
+            </h2>
+            
+            <p class="text-lg lg:text-2xl text-[#122832] font-['Verdana']">
+                Transform Your Home into Your Dream Residence with Our 
+                <br class="hidden lg:block"> Specialised Renovation Services
+            </p>
+    
+            <!-- Features List -->
+            <ul class="space-y-4 text-xl lg:text-2xl font-['Verdana'] tracking-wide">
+                <li class="flex items-center gap-2">
+                    <span class="material-icons text-[#122832]">task_alt</span>
+                    Expert Craftmanship
+                </li>
+                <li class="flex items-center gap-2">
+                    <span class="material-icons text-[#122832]">task_alt</span>
+                    Tailored Solutions
+                </li>
+                <li class="flex items-center gap-2">
+                    <span class="material-icons text-[#122832]">task_alt</span>
+                    Premium Materials
+                </li>
+                <li class="flex items-center gap-2">
+                    <span class="material-icons text-[#122832]">task_alt</span>
+                    Innovative Designs
+                </li>
+                <li class="flex items-center gap-2">
+                    <span class="material-icons text-[#122832]">task_alt</span>
+                    Transparent Communication
+                </li>
+                <li class="flex items-center gap-2">
+                    <span class="material-icons text-[#122832]">task_alt</span>
+                    Satisfaction Guaranteed
+                </li>
+            </ul>
+    
+            <!-- Button -->
+            <button class="w-full lg:w-[170px] h-[70px] bg-[#122832] text-white rounded-full shadow-md hover:bg-[#1a3a4b] transition-colors text-xl lg:text-2xl font-['Verdana']">
+                Get Started
+            </button>
+        </div>
+    
+        <!-- Image Section -->
+        <div class="w-full lg:w-1/2 p-4 flex justify-center items-center">
+            <img 
+                src="images/low-angle-shot-tall-city-building-with-blue-sky-background-new-york.jpg" 
+                alt="City Building" 
+                class="w-full max-w-[900px] h-auto lg:h-[700px] object-cover"
+            >
+        </div>
+    </div>
+    
+    
+    <div class="min-h-screen py-12 px-4 w-full flex flex-col items-center gap-12 bg-white">
+        <!-- Header Section -->
+        <div class="w-full max-w-7xl flex flex-col lg:flex-row items-center justify-between gap-6">
+            <h2 class="text-3xl lg:text-5xl text-[#122832] font-['Verdana'] leading-tight">
+                Discover your Ideal <br class="hidden lg:block"> Home
+            </h2>
+            <div class="flex gap-4">
+                <button class="px-8 py-4 border-2 border-[#122832] text-[#122832] font-bold rounded-md hover:bg-gray-100 transition-colors">
+                    For Rent
+                </button>
+                <button class="px-8 py-4 border-2 border-[#122832] text-[#122832] font-bold rounded-md hover:bg-gray-100 transition-colors">
+                    For Sale
+                </button>
+            </div>
+        </div>
+    
+        <!-- Property Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 w-full max-w-7xl">
+            <!-- Property Card 1 -->
+            <div class="group relative h-96 rounded-lg overflow-hidden shadow-lg transition-transform hover:-translate-y-1">
+                <img 
+                    src="/images/IMG_7456.JPG" 
+                    alt="Property" 
+                    class="w-full h-full object-cover"
+                >
+                <div class="absolute bottom-0 w-full bg-white bg-opacity-95 p-4 space-y-3">
+                    <h3 class="font-bold text-lg text-[#122832]">JBC Service, Sanjar Bangesh</h3>
+                    <div class="flex justify-between items-center">
+                        <p class="font-bold text-[#122832]">$70 - 85</p>
+                        <button class="bg-[#122832] text-white px-6 py-2 rounded hover:bg-[#1a3a4b] transition-colors">
+                            Book Now
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="group relative h-96 rounded-lg overflow-hidden shadow-lg transition-transform hover:-translate-y-1">
+                <img 
+                    src="/images/IMG_7169.JPG" 
+                    alt="Property" 
+                    class="w-full h-full object-cover"
+                >
+                <div class="absolute bottom-0 w-full bg-white bg-opacity-95 p-4 space-y-3">
+                    <h3 class="font-bold text-lg text-[#122832]">Awiye Luxury, 5 star apartment</h3>
+                    <div class="flex justify-between items-center">
+                        <p class="font-bold text-[#122832]">$56 - 61</p>
+                        <button class="bg-[#122832] text-white px-6 py-2 rounded hover:bg-[#1a3a4b] transition-colors">
+                            Book Now
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="group relative h-96 rounded-lg overflow-hidden shadow-lg transition-transform hover:-translate-y-1">
+                <img 
+                    src="/images/IMG_7169.JPG" 
+                    alt="Property" 
+                    class="w-full h-full object-cover"
+                >
+                <div class="absolute bottom-0 w-full bg-white bg-opacity-95 p-4 space-y-3">
+                    <h3 class="font-bold text-lg text-[#122832]">Randell Service, Wisconsin</h3>
+                    <div class="flex justify-between items-center">
+                        <p class="font-bold text-[#122832]">$70 - 85</p>
+                        <button class="bg-[#122832] text-white px-6 py-2 rounded hover:bg-[#1a3a4b] transition-colors">
+                            Book Now
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="group relative h-96 rounded-lg overflow-hidden shadow-lg transition-transform hover:-translate-y-1">
+                <img 
+                    src="/images/IMG_7372.JPG" 
+                    alt="Property" 
+                    class="w-full h-full object-cover"
+                >
+                <div class="absolute bottom-0 w-full bg-white bg-opacity-95 p-4 space-y-3">
+                    <h3 class="font-bold text-lg text-[#122832]">Basham Halley, Brooks Av.</h3>
+                    <div class="flex justify-between items-center">
+                        <p class="font-bold text-[#122832]">$70 - 85</p>
+                        <button class="bg-[#122832] text-white px-6 py-2 rounded hover:bg-[#1a3a4b] transition-colors">
+                            Book Now
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="group relative h-96 rounded-lg overflow-hidden shadow-lg transition-transform hover:-translate-y-1">
+                <img 
+                    src="/images/IMG_7456.JPG" 
+                    alt="Property" 
+                    class="w-full h-full object-cover"
+                >
+                <div class="absolute bottom-0 w-full bg-white bg-opacity-95 p-4 space-y-3">
+                    <h3 class="font-bold text-lg text-[#122832]"> Ikoyi GRA, Lagos</h3>
+                    <div class="flex justify-between items-center">
+                        <p class="font-bold text-[#122832]">$70 - 85</p>
+                        <button class="bg-[#122832] text-white px-6 py-2 rounded hover:bg-[#1a3a4b] transition-colors">
+                            Book Now
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="group relative h-96 rounded-lg overflow-hidden shadow-lg transition-transform hover:-translate-y-1">
+                <img 
+                    src="/images/IMG_7456.JPG" 
+                    alt="Property" 
+                    class="w-full h-full object-cover"
+                >
+                <div class="absolute bottom-0 w-full bg-white bg-opacity-95 p-4 space-y-3">
+                    <h3 class="font-bold text-lg text-[#122832]"> Ikoyi GRA, Lagos</h3>
+                    <div class="flex justify-between items-center">
+                        <p class="font-bold text-[#122832]">$70 - 85</p>
+                        <button class="bg-[#122832] text-white px-6 py-2 rounded hover:bg-[#1a3a4b] transition-colors">
+                            Book Now
+                        </button>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Add more property cards with the same structure -->
+    
+        </div>
+    
+        <!-- See All Button -->
+        <button class="group flex items-center gap-2 bg-[#122832] text-white px-8 py-4 rounded-md hover:bg-[#1a3a4b] transition-colors">
+            <span class="font-bold">See all Properties</span>
+            <span class="material-icons group-hover:translate-x-1 transition-transform">arrow_outward</span>
+        </button>
+    </div>
+    <div class="test-container bg-gray-900 text-white flex flex-col items-center py-12">
+        <div class="statement text-center mb-8">
+            <h3 class="text-2xl md:text-3xl lg:text-4xl font-bold">What our Customers are Saying</h3>
+        </div>
+        <!-- Testimonial Container -->
+        <div id="testimonial-slider" class="testimonial-slider relative w-full max-w-7xl">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Testimonial Card 1 -->
+                <div class="testimonial-card bg-white text-gray-800 flex flex-col p-6 rounded-lg shadow-md hidden md:block">
+                    <div class="quote-circle bg-white text-yellow-500 w-12 h-12 rounded-full flex items-center justify-center shadow-lg mx-auto -mt-8">
+                        <span class="text-4xl font-bold">"</span>
+                    </div>
+                    <div class="testimonial-text mt-4">
+                        <p class="text-justify italic">
+                            "Working with this company has been an incredible experience. They understand my vision and brought it to life with precision and care. My home renovation exceeded all my expectations."
+                        </p>
+                    </div>
+                    <div class="testimonial-author mt-4 text-center font-semibold">
+                        <p>- Sarah Thompson</p>
+                    </div>
+                    <div class="testimonial-rating mt-2 text-center text-yellow-400">
+                        ⭐⭐⭐⭐⭐
+                    </div>
+                </div>
+                <!-- Testimonial Card 2 -->
+                <div class="testimonial-card bg-white text-gray-800 flex flex-col p-6 rounded-lg shadow-md hidden md:block">
+                    <div class="quote-circle bg-white text-yellow-500 w-12 h-12 rounded-full flex items-center justify-center shadow-lg mx-auto -mt-8">
+                        <span class="text-4xl font-bold">"</span>
+                    </div>
+                    <div class="testimonial-text mt-4">
+                        <p class="text-justify italic">
+                            "They transformed our old house into a beautiful modern home. Their attention to detail is unmatched!"
+                        </p>
+                    </div>
+                    <div class="testimonial-author mt-4 text-center font-semibold">
+                        <p>- John Doe</p>
+                    </div>
+                    <div class="testimonial-rating mt-2 text-center text-yellow-400">
+                        ⭐⭐⭐⭐⭐
+                    </div>
+                </div>
+                <!-- Testimonial Card 3 -->
+                <div class="testimonial-card bg-white text-gray-800 flex flex-col p-6 rounded-lg shadow-md hidden md:block">
+                    <div class="quote-circle bg-white text-yellow-500 w-12 h-12 rounded-full flex items-center justify-center shadow-lg mx-auto -mt-8">
+                        <span class="text-4xl font-bold">"</span>
+                    </div>
+                    <div class="testimonial-text mt-4">
+                        <p class="text-justify italic">
+                            "The team was professional and attentive throughout the entire process. I couldn’t have asked for better results!"
+                        </p>
+                    </div>
+                    <div class="testimonial-author mt-4 text-center font-semibold">
+                        <p>- Emily Rogers</p>
+                    </div>
+                    <div class="testimonial-rating mt-2 text-center text-yellow-400">
+                        ⭐⭐⭐⭐⭐
+                    </div>
+                </div>
+            </div>
+            <!-- Mobile Rotating Card -->
+            <div class="testimonial-card bg-white text-gray-800 flex flex-col p-6 rounded-lg shadow-md md:hidden">
+                <div class="quote-circle bg-white text-yellow-500 w-12 h-12 rounded-full flex items-center justify-center shadow-lg mx-auto -mt-8">
+                    <span class="text-4xl font-bold">"</span>
+                </div>
+                <div class="testimonial-text mt-4">
+                    <p class="text-justify italic" id="mobile-text">
+                        "Working with this company has been an incredible experience. They understand my vision and brought it to life with precision and care. My home renovation exceeded all my expectations."
+                    </p>
+                </div>
+                <div class="testimonial-author mt-4 text-center font-semibold" id="mobile-author">
+                    <p>- Sarah Thompson</p>
+                </div>
+                <div class="testimonial-rating mt-2 text-center text-yellow-400" id="mobile-rating">
+                    ⭐⭐⭐⭐⭐
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Testimonials data
+            const testimonials = [
+                {
+                    text: "Working with this company has been an incredible experience. They understand my vision and brought it to life with precision and care. My home renovation exceeded all my expectations.",
+                    author: "- Sarah Thompson",
+                    rating: "⭐⭐⭐⭐⭐"
+                },
+                {
+                    text: "They transformed our old house into a beautiful modern home. Their attention to detail is unmatched!",
+                    author: "- John Doe",
+                    rating: "⭐⭐⭐⭐⭐"
+                },
+                {
+                    text: "The team was professional and attentive throughout the entire process. I couldn’t have asked for better results!",
+                    author: "- Emily Rogers",
+                    rating: "⭐⭐⭐⭐⭐"
+                }
+            ];
+    
+            // HTML elements for mobile card
+            const mobileText = document.getElementById("mobile-text");
+            const mobileAuthor = document.getElementById("mobile-author");
+            const mobileRating = document.getElementById("mobile-rating");
+    
+            let currentIndex = 0;
+    
+            function updateMobileCard() {
+                const testimonial = testimonials[currentIndex];
+                mobileText.textContent = testimonial.text;
+                mobileAuthor.textContent = testimonial.author;
+                mobileRating.textContent = testimonial.rating;
+    
+                currentIndex = (currentIndex + 1) % testimonials.length;
+            }
+    
+            // Rotate testimonials every 5 seconds
+            setInterval(updateMobileCard, 5000);
+        });
+    </script>
+    
+    
+    
+    <div class="faq-section py-8 bg-gray-100">
+        <div class="faq-content text-center px-4 mb-8">
+          <h2 class="text-2xl md:text-4xl font-bold text-gray-800 leading-10">Frequently Asked Questions</h2>
+          <p class="text-gray-600 mt-2">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, quod atque fuga laborum, nostrum tenetur quibusdam nobis porro ut vitae.
+          </p>
+        </div>
+        <div class="faq-slides max-w-3xl mx-auto space-y-4 px-4">
+          <!-- FAQ Item 1 -->
+          <div class="faq-item bg-white shadow-md rounded-lg p-4">
+            <h2
+              class="faq-question flex justify-between items-center cursor-pointer text-lg font-medium text-gray-800"
+              onclick="toggleFaq(this)">
+              How do I search for properties on the website? <i class="material-icons">remove</i>
+            </h2>
+            <p class="faq-answer text-gray-600 mt-2">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste sint iusto eligendi, ab possimus ratione accusamus corrupti dolor repellendus maiores.
+            </p>
+          </div>
+          <!-- FAQ Item 2 -->
+          <div class="faq-item bg-white shadow-md rounded-lg p-4">
+            <h2
+              class="faq-question flex justify-between items-center cursor-pointer text-lg font-medium text-gray-800"
+              onclick="toggleFaq(this)">
+              Do you offer property management services? <i class="material-icons">add</i>
+            </h2>
+            <p class="faq-answer text-gray-600 mt-2 hidden">
+              Yes, we offer a wide range of property management services, including maintenance, tenant screening, and rent collection.
+            </p>
+          </div>
+          <!-- FAQ Item 3 -->
+          <div class="faq-item bg-white shadow-md rounded-lg p-4">
+            <h2
+              class="faq-question flex justify-between items-center cursor-pointer text-lg font-medium text-gray-800"
+              onclick="toggleFaq(this)">
+              Can I save my listings for future preference? <i class="material-icons">add</i>
+            </h2>
+            <p class="faq-answer text-gray-600 mt-2 hidden">
+              Yes, you can save your favorite listings by creating an account and adding them to your wishlist.
+            </p>
+          </div>
+          <!-- FAQ Item 4 -->
+          <div class="faq-item bg-white shadow-md rounded-lg p-4">
+            <h2
+              class="faq-question flex justify-between items-center cursor-pointer text-lg font-medium text-gray-800"
+              onclick="toggleFaq(this)">
+              What information is provided on the property? <i class="material-icons">add</i>
+            </h2>
+            <p class="faq-answer text-gray-600 mt-2 hidden">
+              Each property listing includes photos, descriptions, price, location details, and more.
+            </p>
+          </div>
+          <!-- FAQ Item 5 -->
+          <div class="faq-item bg-white shadow-md rounded-lg p-4">
+            <h2
+              class="faq-question flex justify-between items-center cursor-pointer text-lg font-medium text-gray-800"
+              onclick="toggleFaq(this)">
+              How can I schedule a property viewing? <i class="material-icons">add</i>
+            </h2>
+            <p class="faq-answer text-gray-600 mt-2 hidden">
+              You can schedule a viewing by contacting the property owner or using the scheduling tool available on the listing page.
+            </p>
+          </div>
+          <!-- FAQ Item 6 -->
+          <div class="faq-item bg-white shadow-md rounded-lg p-4">
+            <h2
+              class="faq-question flex justify-between items-center cursor-pointer text-lg font-medium text-gray-800"
+              onclick="toggleFaq(this)">
+              Can I make payment in installments? <i class="material-icons">add</i>
+            </h2>
+            <p class="faq-answer text-gray-600 mt-2 hidden">
+              Yes, we offer flexible payment plans. Contact our support team for more information.
+            </p>
+          </div>
+        </div>
+      </div>
+      
+
+      <footer class="bg-slate-900 py-8">
+        <div class="max-w-6xl mx-auto px-4">
+          <!-- Main Grid -->
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Company Info -->
+            <div class="space-y-4">
+              <h2 class="text-lg font-bold text-white">KeyCity</h2>
+              <p class="text-gray-300">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laborum cum facere deleniti eum dolorem aperiam quo maxime perspiciatis placeat sapiente distinctio excepturi.
+              </p>
+              <div class="flex gap-4">
+                <svg class="w-8 h-8 text-white hover:text-blue-400 cursor-pointer" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path></svg>
+                <svg class="w-8 h-8 text-white hover:text-blue-400 cursor-pointer" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path></svg>
+                <svg class="w-8 h-8 text-white hover:text-blue-400 cursor-pointer" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path></svg>
+              </div>
+            </div>
+      
+            <!-- Quick Links -->
+            <div>
+              <h3 class="text-lg font-semibold text-white">Quick Links</h3>
+              <div class="mt-4 space-y-2">
+                <p><a href="#" class="text-gray-300 hover:text-blue-400">Property Listing</a></p>
+                <p><a href="#" class="text-gray-300 hover:text-blue-400">Financing Options</a></p>
+                <p><a href="#" class="text-gray-300 hover:text-blue-400">Schedule & Viewing</a></p>
+                <p><a href="#" class="text-gray-300 hover:text-blue-400">Sell Your Property</a></p>
+              </div>
+            </div>
+      
+            <!-- Customer Support -->
+            <div>
+              <h3 class="text-lg font-semibold text-white">Customer Support</h3>
+              <div class="mt-4 space-y-2">
+                <p><a href="#" class="text-gray-300 hover:text-blue-400">FAQs</a></p>
+                <p><a href="#" class="text-gray-300 hover:text-blue-400">Contact Us</a></p>
+                <p><a href="#" class="text-gray-300 hover:text-blue-400">Customer Testimonials</a></p>
+              </div>
+            </div>
+          </div>
+      
+          <!-- Copyright Section -->
+          <div class="mt-8 pt-8 border-t border-gray-700">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-4 text-gray-400">
+              <p>©2024 KeyCity All Rights Reserved.</p>
+              <p>
+                <a href="#" class="hover:text-blue-400">Privacy Policy</a>
+                <span class="mx-2">|</span>
+                <a href="#" class="hover:text-blue-400">Terms and Conditions</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+
+
+
+
+    <script src="index.js"></script>
+
+</body>
+</html>
